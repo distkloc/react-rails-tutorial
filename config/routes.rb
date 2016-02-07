@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
 
   root 'comments#index'
+
+  namespace :api, format: 'json' do
+    namespace :v1 do
+      resources :comments
+    end
+  end
 end
